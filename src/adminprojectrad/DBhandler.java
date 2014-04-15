@@ -18,9 +18,9 @@ import java.sql.Statement;
 public class DBhandler {
 
     Connection conn = null;
-    String dbName = "corebase";
+    String dbName = "rad";
     String user = "root";
-    String pwd = "rooot";
+    String pwd = "root";
 
     public void connectingDatabase() throws Exception {
 
@@ -33,7 +33,7 @@ public class DBhandler {
 
         try {
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/" + dbName
+                    "jdbc:mysql://89.160.102.9:3306/" + dbName
                     + "?user=" + user + "&password=" + pwd);
             System.out.println("Connecta till " + dbName);
         } catch (Exception ex) {

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml" fx:controller="adminprojectrad.LogInAdminController">
+    <children>
+        <TextField fx:id="usernameField" layoutX="14.0" layoutY="14.0" prefWidth="200.0" promptText="Username" text="" />
+        <PasswordField fx:id="passwordField" layoutX="14.0" layoutY="46.0" prefWidth="200.0" promptText="Password" text="" />
+        <Button fx:id="loginButton" alignment="TOP_LEFT" layoutX="14.0" layoutY="79.0" mnemonicParsing="false" onAction="#handleLoginButton" text="Login" />
+        <Button fx:id="registerButton" layoutX="86.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleRegisterButton" text="Register" />
+    </children>
+</AnchorPane>
