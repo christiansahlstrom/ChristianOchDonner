@@ -11,17 +11,15 @@
   <children>
     <TextField fx:id="fieldCompany" layoutX="100.0" layoutY="110.0" prefWidth="200.0" />
     <TextField fx:id="passangerSeatField" layoutX="100.0" layoutY="142.0" prefWidth="200.0" />
-    <Button id="addButton" layoutX="325.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleButtonEvent" text="Button" />
+    <Button id="addButton" layoutX="322.0" layoutY="178.0" mnemonicParsing="false" onAction="#handleButtonEvent" text="Button" />
     <Text layoutX="278.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create new flight">
       <font>
         <Font size="16.0" />
       </font>
     </Text>
-    <TextField id="flightIDField" layoutX="100.0" layoutY="173.0" prefWidth="200.0" />
-    <TextField id="takeOffStart" layoutX="100.0" layoutY="201.0" prefWidth="200.0" />
-    <Text layoutX="14.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight company" />
-    <Text layoutX="14.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passanger seats" />
-    <Text layoutX="14.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FlightID" />
-    <Text layoutX="14.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Take off airport" />
+    <TextField id="takeOffStart" layoutX="97.0" layoutY="178.0" prefWidth="200.0" />
+    <Text layoutX="10.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight company" />
+    <Text layoutX="9.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passanger seats" />
+    <Text layoutX="11.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Take off airport" />
   </children>
 </AnchorPane>

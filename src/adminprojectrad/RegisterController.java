@@ -29,6 +29,11 @@ public class RegisterController implements Initializable {
     TextField socialField;
     @FXML
     Button saveUserButton;
+    private String fName;
+    private String lName;
+    private String pWord;
+    private String uName;
+    private String social;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -37,6 +42,25 @@ public class RegisterController implements Initializable {
 
     @FXML
     private void handleSaveButton(ActionEvent ev) {
+
+        fName = fNameField.getText().toString();
+        lName = lNameField.getText().toString();
+        pWord = passwordField.getText().toString();
+        uName = userNameField.getText().toString();
+        social = socialField.getText().toString();
+
+        addToEmployee();
+    }
+
+    public void addToEmployee() {
+        DBhandler db = new DBhandler();
+        try {
+            db.connectingDatabase();
+            db.fetchDataIntoEmployee(fName, lName, uName, pWord, social);
+        } catch (Exception ex) {
+
+            System.out.print(ex);
+        }
 
     }
 

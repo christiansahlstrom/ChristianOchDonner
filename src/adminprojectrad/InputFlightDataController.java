@@ -25,8 +25,8 @@ import javafx.stage.Stage;
  */
 public class InputFlightDataController implements Initializable {
 
-    String company;
-    double seats;
+    private String company;
+    private int seats;
     @FXML
     TextField fieldCompany;
     @FXML
@@ -38,28 +38,29 @@ public class InputFlightDataController implements Initializable {
     }
 
     @FXML
-    private void handleButtonEvent(ActionEvent event) throws IOException {
+    private void handleButtonEvent(ActionEvent event) throws IOException, Exception {
         getValues();
-        System.out.println(company + seats);
-        Stage stage = new Stage();
-        Pane myPane = null;
-        myPane = FXMLLoader.load(getClass().getResource("InputEmployeeData.fxml"));
-        Scene scene = new Scene(myPane);
-        stage.setScene(scene);
-        stage.show();
+        addToDataBase();
 
-        Node source = (Node) event.getSource();
-        Stage stage1 = (Stage) source.getScene().getWindow();
-        stage1.close();
+
+//        Node source = (Node) event.getSource();
+//        Stage stage1 = (Stage) source.getScene().getWindow();
+//        stage1.close();
     }
 
     private void getValues() {
         try {
             company = fieldCompany.getText().toString();
-            seats = Double.parseDouble(passangerSeatField.getText());
+            seats = Integer.parseInt(passangerSeatField.getText());
         } catch (Exception e) {
 
         }
+    }
+
+    private void addToDataBase() throws Exception {
+        DBhandler db = new DBhandler();
+        db.connectingDatabase();
+        db.fetchingDataToflight(company, seats, company);
     }
 
 }

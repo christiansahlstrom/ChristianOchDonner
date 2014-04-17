@@ -23,8 +23,7 @@ public class InputEmployeeDataController implements Initializable {
 
     DBhandler db = new DBhandler();
 
-    private String fName, lName, social,username,password;
-    private int empNbr;
+    private String fName, lName, social, username, password;
 
     @FXML
     TextField firstnameField;
@@ -37,7 +36,7 @@ public class InputEmployeeDataController implements Initializable {
     @FXML
     TextField passwordField;
     @FXML
-    TextField usernameField ;
+    TextField usernameField;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -47,7 +46,6 @@ public class InputEmployeeDataController implements Initializable {
     @FXML
     private void handleButtonEvent(ActionEvent event) throws Exception {
         getValues();
-        System.out.println(fName + lName + social + "E" + empNbr);
         addToDataBase();
 
 //        Node source = (Node) event.getSource();
@@ -61,17 +59,10 @@ public class InputEmployeeDataController implements Initializable {
         social = socialField.getText().toString();
         username = usernameField.getText().toString();
         password = passwordField.getText().toString();
-        try {
-            empNbr = Integer.parseInt(empNbrField.getText());
-        } catch (Exception e) {
-            empNbrField.setStyle("-fx-background-color: red;");
-        }
     }
 
-    public void addToDataBase() throws Exception {
-        System.out.println(empNbr + fName);
+    private void addToDataBase() throws Exception {
         db.connectingDatabase();
-        db.fetchingDataIntoEmployee(empNbr, fName);
-
+        db.fetchDataIntoEmployee(fName, lName, username, password, social);
     }
 }

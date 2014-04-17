@@ -17,15 +17,13 @@
     <TextField fx:id="firstnameField" layoutX="134.0" layoutY="85.0" prefWidth="200.0" />
     <TextField fx:id="lastNameField" layoutX="134.0" layoutY="119.0" prefWidth="200.0" />
     <TextField fx:id="socialField" layoutX="134.0" layoutY="151.0" prefWidth="200.0" />
-    <TextField fx:id="empNbrField" layoutX="134.0" layoutY="182.0" prefWidth="200.0" />
     <Button layoutX="463.0" layoutY="236.0" mnemonicParsing="false" onAction="#handleButtonEvent" text="Add" />
-    <TextField fx:id="passwordField" layoutX="134.0" layoutY="215.0" prefWidth="200.0" />
-    <TextField fx:id="usernameField" layoutX="134.0" layoutY="244.0" prefWidth="200.0" />
+    <TextField fx:id="passwordField" layoutX="133.0" layoutY="211.0" prefWidth="200.0" />
+    <TextField fx:id="usernameField" layoutX="134.0" layoutY="179.0" prefWidth="200.0" />
     <Text layoutX="2.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Social security number" />
     <Text layoutX="5.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Firstname" />
-    <Text layoutX="5.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lastname" />
-    <Text layoutX="4.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-    <Text layoutX="2.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-    <Text layoutX="5.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee ID" />
+    <Text layoutX="3.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lastname" />
+    <Text layoutX="4.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+    <Text layoutX="4.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
   </children>
 </AnchorPane>

@@ -10,11 +10,12 @@ import javafx.stage.Stage;
 
 public class AdminProjectRAD extends Application {
 
-    DBhandler db = new DBhandler();
-
     @Override
     public void start(Stage stage) throws Exception {
+        DBhandler db = new DBhandler();
         db.connectingDatabase();
+        db.getEmployeeData();
+
         Pane myPane = null;
         myPane = FXMLLoader.load(getClass().getResource("LogInAdmin.fxml"));
         Scene scene = new Scene(myPane);

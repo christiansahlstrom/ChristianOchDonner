@@ -8,6 +8,8 @@ package adminprojectrad;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -50,7 +52,11 @@ public class InputHotelDataController implements Initializable {
     @FXML
     private void handleButtonEvent(ActionEvent event) throws IOException {
         initializing();
-        System.out.println(hotel + country + idfield + cityfield+info);
+        try {
+            fetchingToDB();
+            
+            
+            
 //        Stage stage = new Stage();
 //        Pane myPane = null;
 //        myPane = FXMLLoader.load(getClass().getResource("InputFlightData.fxml"));
@@ -60,6 +66,9 @@ public class InputHotelDataController implements Initializable {
 //        Node source = (Node) event.getSource();
 //        Stage stage1 = (Stage) source.getScene().getWindow();
 //        stage1.close();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
 
     private void initializing() {
@@ -78,6 +87,12 @@ public class InputHotelDataController implements Initializable {
             imageField.setStyle("-fx-background-color: red;");
             System.out.println("Gick ej");
         }
-
+    }
+    
+    private void fetchingToDB() throws Exception {
+        DBhandler db = new DBhandler();
+        db.connectingDatabase();
+        db.fetchingDataIntoHotell(hotel, country, cityfield, idfield, info, imageURL);
+      
     }
 }

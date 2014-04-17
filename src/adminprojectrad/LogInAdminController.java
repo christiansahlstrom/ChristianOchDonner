@@ -35,7 +35,6 @@ public class LogInAdminController implements Initializable {
 
     @FXML
     private void handleLoginButton(ActionEvent event) throws IOException {
-        System.out.println(user);
         confirmUsername = usernameField.getText().toString();
         confirmPassword = passwordField.getText();
         if (confirmUsername.equals(user) && confirmPassword.equals(pass)) {
