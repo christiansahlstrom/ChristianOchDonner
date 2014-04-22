@@ -7,23 +7,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="adminprojectrad.InputEmployeeDataController">
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="adminprojectrad.InputEmployeeDataController">
   <children>
     <Text layoutX="224.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create new employee">
       <font>
-        <Font size="16.0" />
+        <Font size="20.0" />
       </font>
     </Text>
-    <TextField fx:id="firstnameField" layoutX="134.0" layoutY="85.0" prefWidth="200.0" />
-    <TextField fx:id="lastNameField" layoutX="134.0" layoutY="119.0" prefWidth="200.0" />
-    <TextField fx:id="socialField" layoutX="134.0" layoutY="151.0" prefWidth="200.0" />
-    <Button layoutX="463.0" layoutY="236.0" mnemonicParsing="false" onAction="#handleButtonEvent" text="Add" />
-    <TextField fx:id="passwordField" layoutX="133.0" layoutY="211.0" prefWidth="200.0" />
-    <TextField fx:id="usernameField" layoutX="134.0" layoutY="179.0" prefWidth="200.0" />
-    <Text layoutX="2.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Social security number" />
-    <Text layoutX="5.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Firstname" />
-    <Text layoutX="3.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lastname" />
-    <Text layoutX="4.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-    <Text layoutX="4.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+    <TextField fx:id="firstnameField" layoutX="25.0" layoutY="86.0" prefWidth="200.0" promptText="Firstname" />
+    <TextField fx:id="lastNameField" layoutX="25.0" layoutY="120.0" prefWidth="200.0" promptText="Lastname" />
+    <TextField fx:id="socialField" layoutX="25.0" layoutY="152.0" prefWidth="200.0" promptText="Social security number" />
+    <Button layoutX="264.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleButtonEvent" text="Add to database" />
+    <TextField fx:id="passwordField" layoutX="24.0" layoutY="212.0" prefWidth="200.0" promptText="Password" />
+    <TextField fx:id="usernameField" layoutX="25.0" layoutY="180.0" prefWidth="200.0" promptText="Username" />
+    <TextField fx:id="repeatField" layoutX="25.0" layoutY="247.0" prefWidth="200.0" promptText="Repeat password" />
+    <Button fx:id ="backbutton" layoutX="25.0" layoutY="297.0" mnemonicParsing="false" text="Back" onAction="#handleBackButtonEvent" />
   </children>
 </AnchorPane>

@@ -6,12 +6,13 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="adminprojectrad.InputDataController">
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="adminprojectrad.InputDataController">
   <children>
-    <Button id="continueButton" layoutX="405.0" layoutY="124.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Continue" />
-    <Button id="logOut" layoutX="76.0" layoutY="124.0" mnemonicParsing="false" text="Log out" textFill="BLACK" />
-    <ChoiceBox fx:id="cb" layoutX="314.0" layoutY="124.0">
+    <Button id="continueButton" layoutX="683.0" layoutY="258.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="26.6015625" text="Continue" />
+    <Button id="logOut" layoutX="54.0" layoutY="258.0" mnemonicParsing="false" prefHeight="27.0" text="Log out" textFill="BLACK" onAction="#handleLogOutButtonEvent" />
+    <ChoiceBox fx:id="cb" layoutX="268.0" layoutY="264.0" prefWidth="274.0">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="Hotel" />
@@ -20,5 +21,10 @@
         </FXCollections>
       </items>
     </ChoiceBox>
+    <Text layoutX="289.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose in the list what to do">
+      <font>
+        <Font size="20.0" />
+      </font>
+    </Text>
   </children>
 </AnchorPane>

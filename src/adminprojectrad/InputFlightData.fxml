@@ -7,19 +7,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="adminprojectrad.InputFlightDataController">
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="adminprojectrad.InputFlightDataController">
   <children>
-    <TextField fx:id="fieldCompany" layoutX="100.0" layoutY="110.0" prefWidth="200.0" />
-    <TextField fx:id="passangerSeatField" layoutX="100.0" layoutY="142.0" prefWidth="200.0" />
-    <Button id="addButton" layoutX="322.0" layoutY="178.0" mnemonicParsing="false" onAction="#handleButtonEvent" text="Button" />
-    <Text layoutX="278.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create new flight">
+    <TextField fx:id="fieldCompany" layoutX="22.0" layoutY="153.0" prefWidth="200.0" promptText="Flight Company" />
+    <TextField fx:id="passangerSeatField" layoutX="22.0" layoutY="185.0" prefWidth="200.0" promptText="Passanger Seats" />
+    <Button id="addButton" layoutX="244.0" layoutY="221.0" mnemonicParsing="false" onAction="#handleButtonEvent" text="Add to database" />
+    <Text layoutX="400.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create new flight">
       <font>
-        <Font size="16.0" />
+        <Font size="20.0" />
       </font>
     </Text>
-    <TextField id="takeOffStart" layoutX="97.0" layoutY="178.0" prefWidth="200.0" />
-    <Text layoutX="10.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight company" />
-    <Text layoutX="9.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passanger seats" />
-    <Text layoutX="11.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Take off airport" />
+    <TextField fx:id="takeOffStart" layoutX="22.0" layoutY="221.0" prefWidth="200.0" promptText="Take off airport" />
+    <Button layoutX="22.0" layoutY="273.0" mnemonicParsing="false" prefWidth="92.0" text="Back" onAction="#handleBackButtonEvent" />
   </children>
 </AnchorPane>

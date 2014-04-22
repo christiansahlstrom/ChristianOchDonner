@@ -60,6 +60,21 @@ public class InputDataController implements Initializable {
 
     }
 
+    @FXML
+    private void handleLogOutButtonEvent(ActionEvent event) throws IOException {
+
+        Stage stage = new Stage();
+        Pane myPane = null;
+        myPane = FXMLLoader.load(getClass().getResource("LogInAdmin.fxml"));
+        Scene scene = new Scene(myPane);
+        stage.setScene(scene);
+        stage.show();
+        Node source = (Node) event.getSource();
+        Stage stage1 = (Stage) source.getScene().getWindow();
+        stage1.close();
+
+    }
+
     public void setUpChoiceBox() {
         cb.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener() {
             @Override

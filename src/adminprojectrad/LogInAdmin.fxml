@@ -5,12 +5,23 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml" fx:controller="adminprojectrad.LogInAdminController">
-    <children>
-        <TextField fx:id="usernameField" layoutX="14.0" layoutY="14.0" prefWidth="200.0" promptText="Username" text="" />
-        <PasswordField fx:id="passwordField" layoutX="14.0" layoutY="46.0" prefWidth="200.0" promptText="Password" text="" />
-        <Button fx:id="loginButton" alignment="TOP_LEFT" layoutX="14.0" layoutY="79.0" mnemonicParsing="false" onAction="#handleLoginButton" text="Login" />
-        <Button fx:id="registerButton" layoutX="86.0" layoutY="80.0" mnemonicParsing="false" onAction="#handleRegisterButton" text="Register" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="adminprojectrad.LogInAdminController">
+  <children>
+    <TextField fx:id="usernameField" layoutX="264.0" layoutY="238.0" prefWidth="200.0" promptText="Username" text="" />
+    <PasswordField fx:id="passwordField" layoutX="264.0" layoutY="270.0" prefWidth="200.0" promptText="Password" text="" />
+    <Button fx:id="loginButton" alignment="TOP_LEFT" layoutX="264.0" layoutY="303.0" mnemonicParsing="false" onAction="#handleLoginButton" text="Login" />
+    <Button fx:id="registerButton" layoutX="336.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleRegisterButton" text="Register" />
+    <Text layoutX="185.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Royal Air Distrubution Coreprogram">
+      <font>
+        <Font size="20.0" />
+      </font>
+    </Text>
+    <Text layoutX="336.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log in">
+      <font>
+        <Font size="15.0" />
+      </font>
+    </Text>
+  </children>
 </AnchorPane>

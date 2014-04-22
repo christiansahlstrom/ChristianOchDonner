@@ -2,11 +2,13 @@ package adminprojectrad;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -18,12 +20,10 @@ import javafx.stage.Stage;
  *
  * @author Christian
  */
-public class LogInAdminController implements Initializable {
+public class LogInAdminController implements Initializable, FieldNullListener {
 
-    private String user = "root";
-    private String pass = "root";
     private String confirmUsername, confirmPassword;
-
+    DBhandler db = new DBhandler();
     @FXML
     TextField usernameField;
     @FXML
@@ -34,21 +34,33 @@ public class LogInAdminController implements Initializable {
     Button registerButton;
 
     @FXML
-    private void handleLoginButton(ActionEvent event) throws IOException {
+    private void handleLoginButton(ActionEvent event) throws IOException, SQLException, Exception {
+        passwordField.setStyle("-fx-background-color: green;");
+        usernameField.setStyle("-fx-background-color: green;");
         confirmUsername = usernameField.getText().toString();
+        if (checkIfFieldIsNull(usernameField)) {
+            turnColorField(usernameField);
+        }
         confirmPassword = passwordField.getText();
-        if (confirmUsername.equals(user) && confirmPassword.equals(pass)) {
+        if (checkIfFieldIsNull(passwordField)) {
+            turnColorField(passwordField);
+        }
+        db.connectingDatabase();
+        if (db.getEmployeeData(confirmUsername, confirmPassword)) {
+
             Stage stage = new Stage();
             Pane myPane = null;
             myPane = FXMLLoader.load(getClass().getResource("InputData.fxml"));
             Scene scene = new Scene(myPane);
             stage.setScene(scene);
             stage.show();
+            Node source = (Node) event.getSource();
+            Stage stage1 = (Stage) source.getScene().getWindow();
+            stage1.close();
 
         } else {
-
-            System.out.println("Wrong username or password");
-            System.out.println(pass + user);
+            turnColorField(usernameField);
+            turnColorField(passwordField);
         }
     }
 
@@ -60,12 +72,29 @@ public class LogInAdminController implements Initializable {
         Scene scene = new Scene(registerPane);
         stage.setScene(scene);
         stage.show();
+        Node source = (Node) event.getSource();
+        Stage stage1 = (Stage) source.getScene().getWindow();
+        stage1.close();
 
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb
+    ) {
         // TODO
     }
 
+    @Override
+    public boolean checkIfFieldIsNull(TextField currentField) {
+        if (currentField.getText().equals("")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public void turnColorField(TextField nullField) {
+        nullField.setStyle("-fx-background-color: red;");
+    }
 }

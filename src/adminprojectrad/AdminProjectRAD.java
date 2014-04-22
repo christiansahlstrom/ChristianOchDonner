@@ -14,8 +14,7 @@ public class AdminProjectRAD extends Application {
     public void start(Stage stage) throws Exception {
         DBhandler db = new DBhandler();
         db.connectingDatabase();
-        db.getEmployeeData();
-
+//        db.fetchingDataIntoCostumer("940506-6344", "Greger", "Nicklasson","greger.cool@msn.com" , "nybovägen", "254-37", "046543322", "0733624439");
         Pane myPane = null;
         myPane = FXMLLoader.load(getClass().getResource("LogInAdmin.fxml"));
         Scene scene = new Scene(myPane);

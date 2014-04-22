@@ -18,7 +18,7 @@ import java.sql.Statement;
 public class DBhandler {
 
     Connection conn = null;
-    String dbName = "royaladdb";
+    String dbName = "royaldbms";
     String user = "root";
     String pwd = "root";
     private Statement statement = null;
@@ -61,17 +61,16 @@ public class DBhandler {
         }
     }
 
-    public void fetchingDataIntoCostumer(int ssn, String fname, String lname, String mail, String address,
-            int zip, String cell, String homephone, int hotelid, int flightid) {
+    public void fetchingDataIntoCostumer(String ssn, String fname, String lname, String mail, String address,
+            String zip, String cell, String homephone) {
 
         try {
             statement = conn.createStatement();
             int rowsAffected = statement.executeUpdate(
-                    "Insert into costumer (ssn,firstname,lastname,mail,address,zipcode,homenumber,cellphone,hotel_hotelid,flight_flightid)"
+                    "Insert into costumer (ssn,firstname,lastname,mail,adress,zipcode,homenumber,cellphone)"
                     + "VALUES "
-                    + "(" + ssn + ",'"
-                    + fname + "','" + lname + "','" + mail + "','" + address + "'," + zip + ",'" + homephone + "','" + cell + "',"
-                    + hotelid + "," + flightid + ");");
+                    + "('" + ssn + "','"
+                    + fname + "','" + lname + "','" + mail + "','" + address + "','" + zip + "','" + homephone + "','" + cell + "');");
 
             System.out.println("Funkar i tredje try");
             System.out.println(rowsAffected);
@@ -102,7 +101,7 @@ public class DBhandler {
         try {
             statement = conn.createStatement();
             int rowsAffected = statement.executeUpdate(
-                    "Insert into flight (companyname,passangerseats,airport)" + "VALUES "
+                    "Insert into flight (company,seats,airport)" + "VALUES "
                     + "('" + company + "',"
                     + seats + ",'" + airport + "');");
 
@@ -153,22 +152,23 @@ public class DBhandler {
         }
     }
 
-    public void getEmployeeData() throws SQLException {
+    public boolean getEmployeeData(String username, String password) throws SQLException {
         ResultSet rs = null;
 
         try {
             statement = conn.createStatement();
-            rs = statement.executeQuery("SELECT * FROM employee");
+            rs = statement.executeQuery("SELECT * FROM employee where password = '" + password + "'" + " && username = '"+username+"'");
             while (rs.next()) {
-                System.out.println(rs.getString("firstname")
-                        + rs.getString("lastname") + rs.getString("ssn"));
+                return true;
             }
             System.out.println("Andra try success");
         } catch (Exception ex) {
             System.out.println("Andra try fail" + ex);
+            return false;
         } finally {
             rs.close();
         }
+        return false;
     }
 
     public void getHotelData() throws SQLException {

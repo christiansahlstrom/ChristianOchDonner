@@ -5,15 +5,22 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="adminprojectrad.RegisterController">
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="adminprojectrad.RegisterController">
   <children>
-    <TextField fx:id="fNameField" layoutX="14.0" layoutY="14.0" prefWidth="200.0" promptText="Firstname" />
-    <TextField fx:id="lNameField" layoutX="14.0" layoutY="46.0" prefWidth="200.0" promptText="Lastname" />
-    <TextField fx:id="repPasswordField" layoutX="14.0" layoutY="189.0" prefWidth="200.0" promptText="Repeat password" />
-    <TextField fx:id="passwordField" layoutX="14.0" layoutY="151.0" prefWidth="200.0" promptText="Password" />
-    <TextField fx:id="userNameField" layoutX="14.0" layoutY="76.0" prefWidth="200.0" promptText="Username" />
-    <Button fx:id="saveUserButton" layoutX="14.0" layoutY="237.0" mnemonicParsing="false" onAction="#handleSaveButton" text="Register" />
-    <TextField fx:id="socialField" layoutX="14.0" layoutY="111.0" prefWidth="200.0" promptText="Social security number" />
+    <TextField fx:id="fNameField" layoutX="91.0" layoutY="135.0" prefWidth="200.0" promptText="Firstname" />
+    <TextField fx:id="lNameField" layoutX="91.0" layoutY="167.0" prefWidth="200.0" promptText="Lastname" />
+    <TextField fx:id="repPasswordField" layoutX="91.0" layoutY="310.0" prefWidth="200.0" promptText="Repeat password" />
+    <TextField fx:id="passwordField" layoutX="91.0" layoutY="272.0" prefWidth="200.0" promptText="Password" />
+    <TextField fx:id="userNameField" layoutX="91.0" layoutY="197.0" prefWidth="200.0" promptText="Username" />
+    <Button fx:id="saveUserButton" layoutX="355.0" layoutY="311.0" mnemonicParsing="false" onAction="#handleSaveButton" text="Register" />
+    <TextField fx:id="socialField" layoutX="91.0" layoutY="232.0" prefWidth="200.0" promptText="Social security number" />
+    <Text layoutX="303.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Employee">
+      <font>
+        <Font size="20.0" />
+      </font>
+    </Text>
+    <Button layoutX="14.0" layoutY="312.0" mnemonicParsing="false" text="Back" onAction="#handleBackButton" />
   </children>
 </AnchorPane>

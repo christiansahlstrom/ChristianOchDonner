@@ -8,26 +8,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="adminprojectrad.InputHotelDataController">
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="adminprojectrad.InputHotelDataController">
   <children>
-    <TextField fx:id="hotelField" layoutX="87.0" layoutY="69.0" prefWidth="200.0" text="" />
-    <TextField fx:id="countryField" layoutX="87.0" layoutY="98.0" prefWidth="200.0" text="" />
-    <TextField fx:id="idField" layoutX="87.0" layoutY="127.0" prefWidth="200.0" text="" />
-    <TextField fx:id="cityField" layoutX="87.0" layoutY="157.0" prefWidth="200.0" text="" />
-    <Text fill="#330000" layoutX="278.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create new hotel">
+    <TextField fx:id="hotelField" layoutX="152.0" layoutY="107.0" prefWidth="200.0" promptText="Hotel name" text="" />
+    <TextField fx:id="countryField" layoutX="152.0" layoutY="136.0" prefWidth="200.0" promptText="Country" text="" />
+    <TextField fx:id="idField" layoutX="152.0" layoutY="169.0" prefWidth="200.0" promptText="Address" text="" />
+    <TextField fx:id="cityField" layoutX="152.0" layoutY="198.0" prefWidth="200.0" promptText="City" text="" />
+    <Button layoutX="400.0" layoutY="406.0" mnemonicParsing="false" onAction="#handleButtonEvent" prefWidth="129.0" text="Add to database" />
+    <TextField fx:id="imageField" layoutX="152.0" layoutY="228.0" prefWidth="200.0" promptText="Image URL" />
+    <TextArea fx:id="infoArea" layoutX="152.0" layoutY="257.0" prefWidth="200.0" promptText="Hotel info..." wrapText="true" />
+    <Button layoutX="14.0" layoutY="402.0" mnemonicParsing="false" onAction="#handleBackButtonEvent" prefWidth="109.0" text="Back" />
+    <Text layoutX="352.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create New Hotel">
       <font>
-        <Font size="16.0" />
+        <Font size="20.0" />
       </font>
     </Text>
-    <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" layoutX="375.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" />
-    <Button layoutX="318.0" layoutY="368.0" mnemonicParsing="false" onAction="#handleButtonEvent" text="Add to" />
-    <TextField fx:id="imageField" layoutX="87.0" layoutY="190.0" prefWidth="200.0" />
-    <Text layoutX="14.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel name" />
-    <Text layoutX="13.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country" />
-    <Text layoutX="12.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adress" />
-    <Text layoutX="13.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City" />
-    <Text layoutX="12.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image URL" />
-    <TextArea fx:id="infoArea" layoutX="87.0" layoutY="219.0" prefWidth="200.0" wrapText="true" />
-    <Text layoutX="12.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel info" />
+    <ImageView fx:id ="imageView" fitHeight="233.0" fitWidth="310.66666666666663" layoutX="465.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true" />
   </children>
 </AnchorPane>
